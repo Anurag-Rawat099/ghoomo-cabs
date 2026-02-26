@@ -11,9 +11,3 @@ export const cabs = [
   { title: "Tempo Traveller (Group)", price: "₹28/km", image: "/uploads/tempo.jpg" },
 ];
 
-export const destinations = [
-  { name: "Kempty Falls", image: "/uploads/kempty-fall.jpg" },
-  { name: "Gun Hill Point", image: "/uploads/gun-hill.jpg" },
-  { name: "Company Garden", image: "/uploads/company-garden.jpg" },
-  { name: "Mall Road Mussoorie", image: "/uploads/mall-road.jpg" },
-];

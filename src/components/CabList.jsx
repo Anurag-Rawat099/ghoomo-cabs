@@ -14,8 +14,8 @@ export default function CabList() {
     { id: 2, title: "SUV (Hill Ride)", price: "150/km", image: "/uploads/suv.jpg" },
     { id: 3, title: "Luxury (Premium)", price: "220/km", image: "/uploads/luxary.jpg" },
     { id: 4, title: "TempoTraveller(Group)", price: "350/km", image: "/uploads/tempo.jpg" },
-    { id: 5, title: "Scooty", price: "1200/day", image: "/uploads/tempo.jpg" },
-    { id: 6, title: "Bike", price: "1500/day", image: "/uploads/tempo.jpg" },
+    { id: 5, title: "Scooty", price: "1200/day", image: "/uploads/scooty.jpg" },
+    { id: 6, title: "Bike", price: "1500/day", image: "/uploads/bike.jpg" },
   ];
 
   return (
