@@ -38,7 +38,6 @@ export default function DestinationSection({ variant = "slider" }) {
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={4}
             slidesPerView={1}
-            navigation
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             loop
             breakpoints={{
@@ -58,7 +57,7 @@ export default function DestinationSection({ variant = "slider" }) {
       )}
 
       {variant === "grid" && (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-1 px-6 max-w-7xl mx-auto">
           {destinations.map((place, index) => (
             <DestinationCard key={index} {...place} />
           ))}

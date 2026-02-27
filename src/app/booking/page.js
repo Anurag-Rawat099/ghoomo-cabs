@@ -1,13 +1,12 @@
-"use client";
-
 import Image from "next/image";
+import { Suspense } from "react";
 import BookingForm from "@/components/BookingForm";
 
-const ADMIN_WHATSAPP_NUMBER = "+918171325155";
+const ADMIN_WHATSAPP_NUMBER = "918171325155";
 
 export default function BookingPage() {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white to-gray-50 px-2 py-4 md:py-10">
+    <section className="min-h-screen bg-gradient-to-b from-white to-gray-50 px-2 py-6 md:py-8">
       <div className="text-center mb-6 md:mb-10">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
           Cab <span className="text-yellow-500">Booking</span>
@@ -36,11 +35,14 @@ export default function BookingPage() {
           </div>
 
           {/* Form */}
-          <div className="p-2 sm:p-4 md:p-6">
+          <div className="p-3 sm:p-5 md:p-6">
             <h2 className="text-lg sm:text-xl font-semibold mb-4">
               Ride Details
             </h2>
-            <BookingForm adminNumber={ADMIN_WHATSAPP_NUMBER} />
+
+            <Suspense fallback={<p className="text-sm text-gray-500">Loading form...</p>}>
+              <BookingForm adminNumber={ADMIN_WHATSAPP_NUMBER} />
+            </Suspense>
           </div>
         </div>
       </div>

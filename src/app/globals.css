@@ -5,7 +5,13 @@
   -webkit-text-fill-color: white;  /* White fill */
 }
 
+:root {
+  --font-sans: var(--font-geist-sans);
+}
 
+body {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
 
 .swiper-button-next,
 .swiper-button-prev {

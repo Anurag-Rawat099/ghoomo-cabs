@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// 👉 Admin WhatsApp Number (no +, no spaces)
 const ADMIN_WHATSAPP_NUMBER = "918171325155";
 
 export default function BookingInquiry() {
@@ -30,115 +29,122 @@ Check-out: ${form.checkout}
 Guests: ${form.guests}
 Message: ${form.message}`;
 
-    const url = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      text
-    )}`;
-
-    window.open(url, "_blank");
+    window.open(
+      `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white to-gray-50 px-2 py-4 md:py-10">
-      
+    <section className="bg-gray-50 py-8 px-4">
       {/* Heading */}
-      <div className="text-center mb-6 md:mb-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+      <div className="text-center mb-6">
+        <h1 className="text-2xl md:text-3xl font-bold">
           Room <span className="text-yellow-500">Booking</span>
         </h1>
-        <p className="text-gray-600 text-xs sm:text-sm mt-1">
+        <p className="text-gray-600 text-xs mt-1">
           Send your stay inquiry and we’ll confirm availability
         </p>
       </div>
 
-      {/* Card */}
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="grid md:grid-cols-2">
+      <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-md overflow-hidden grid lg:grid-cols-2">
+        
+        {/* Image */}
+        <div className="relative h-[220px] lg:h-auto">
+          <Image
+            src="/uploads/hero2.jpg"
+            alt="Room"
+            fill
+            className="object-cover"
+          />
+        </div>
 
-          {/* Image Section */}
-          <div className="relative h-48 sm:h-64 md:h-auto">
-            <Image
-              src="/uploads/hero2.jpg"
-              alt="Room-image"
-              fill
-              className="object-cover"
-              priority
+        {/* Form */}
+        <div className="p-4 md:p-5">
+          <h2 className="text-lg font-semibold mb-4">Stay Details</h2>
+
+          <form onSubmit={sendToWhatsApp} className="space-y-3">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              value={form.name}
+              onChange={handleChange}
+              className="w-full border border-gray-300 px-3 py-2 rounded-md text-sm focus:ring-2 focus:ring-yellow-400"
             />
 
-            <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-              <p className="text-white text-sm sm:text-base font-semibold">
-                Comfortable stays in Mussoorie 🏨
-              </p>
-            </div>
-          </div>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+              value={form.phone}
+              onChange={handleChange}
+              className="w-full border border-gray-300 px-3 py-2 rounded-md text-sm focus:ring-2 focus:ring-yellow-400"
+            />
 
-          {/* Form Section */}
-          <div className="p-2 sm:p-4 md:p-6">
-            <h2 className="text-lg sm:text-xl font-semibold mb-4">
-              Stay Details
-            </h2>
-
-            <form onSubmit={sendToWhatsApp} className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-
-              <div className="flex gap-3">
+            {/* Dates */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="relative">
+                {!form.checkin && (
+                  <span className="absolute left-3 top-1 text-gray-400 text-[10px] pointer-events-none">
+                    Check-in
+                  </span>
+                )}
                 <input
                   type="date"
                   name="checkin"
-                  required
+                  value={form.checkin}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-
-                <input
-                  type="date"
-                  name="checkout"
                   required
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  className="w-full border border-gray-300 pt-4 pb-1 px-3 rounded-md text-sm focus:ring-2 focus:ring-yellow-400"
                 />
               </div>
 
-              <input
-                type="number"
-                name="guests"
-                placeholder="Number of Guests"
-                required
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
+              <div className="relative">
+                {!form.checkout && (
+                  <span className="absolute left-3 top-1 text-gray-400 text-[10px] pointer-events-none">
+                    Check-out
+                  </span>
+                )}
+                <input
+                  type="date"
+                  name="checkout"
+                  value={form.checkout}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 pt-4 pb-1 px-3 rounded-md text-sm focus:ring-2 focus:ring-yellow-400"
+                />
+              </div>
+            </div>
 
-              <textarea
-                name="message"
-                placeholder="Additional Message"
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
+            <input
+              type="number"
+              name="guests"
+              placeholder="Guests"
+              required
+              value={form.guests}
+              onChange={handleChange}
+              className="w-full border border-gray-300 px-3 py-2 rounded-md text-sm focus:ring-2 focus:ring-yellow-400"
+            />
 
-              <button
-                type="submit"
-                className="w-full bg-yellow-500 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition"
-              >
-                Send Inquiry on WhatsApp
-              </button>
-            </form>
-          </div>
+            <textarea
+              name="message"
+              placeholder="Message (optional)"
+              rows={2}
+              value={form.message}
+              onChange={handleChange}
+              className="w-full border border-gray-300 px-3 py-2 rounded-md text-sm focus:ring-2 focus:ring-yellow-400"
+            />
 
+            <button
+              type="submit"
+              className="w-full bg-yellow-500 py-2 rounded-md text-sm font-semibold hover:bg-yellow-400 transition"
+            >
+              Send Inquiry on WhatsApp
+            </button>
+          </form>
         </div>
       </div>
     </section>

@@ -14,7 +14,7 @@ export default function CabCard({ title, price, image }) {
           />
 
           {/* Price */}
-          <div className="absolute top-3 right-3 bg-black text-yellow-400 px-3 py-1 rounded-full text-xs sm:text-sm font-bold shadow">
+          <div className="absolute top-3 right-3 bg-black text-yellow-400 px-3 py-1 rounded-full text-md sm:text-md font-bold shadow">
             ₹{price}
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function CabCard({ title, price, image }) {
               query: { cabType: title, cabPrice: price },
             }}
           >
-            <button className="mt-auto bg-yellow-500 text-white px-4 py-2 rounded-full text-sm sm:text-base font-semibold hover:bg-black hover:text-yellow-400 transition w-full">
+            <button className="mt-auto bg-yellow-500 text-white px-4 py-2 rounded-full text-sm sm:text-base font-semibold hover:bg-black hover:text-yellow-400 transition w-1/2">
               Book Ride
             </button>
           </Link>

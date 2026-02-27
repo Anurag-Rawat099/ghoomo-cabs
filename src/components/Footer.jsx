@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-[#0B1D2A] to-black text-gray-300 pt-14 pb-8 px-6">
@@ -14,16 +16,32 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Company */}
-        <div>
-          <h3 className="text-[#F4C430] font-semibold mb-4">Company</h3>
-          <ul className="space-y-2 text-sm">
-            <li className="hover:text-white transition">About Us</li>
-            <li className="hover:text-white transition">Our Fleet</li>
-            <li className="hover:text-white transition">Careers</li>
-            <li className="hover:text-white transition">Contact</li>
-          </ul>
-        </div>
+      {/* Company */}
+<div>
+  <h3 className="text-[#F4C430] font-semibold mb-4">Company</h3>
+  <ul className="space-y-2 text-sm">
+    <li>
+      <Link href="/about" className="hover:text-white transition">
+        About Us
+      </Link>
+    </li>
+    <li>
+      <Link href="/booking" className="hover:text-white transition">
+        Booking
+      </Link>
+    </li>
+    <li>
+      <Link href="/destinations" className="hover:text-white transition">
+      Destinations
+      </Link>
+    </li>
+    <li>
+      <Link href="/contact" className="hover:text-white transition">
+        Contact
+      </Link>
+    </li>
+  </ul>
+</div>
 
         {/* Services */}
         <div>
@@ -32,7 +50,7 @@ export default function Footer() {
             <li>City Rides</li>
             <li>Airport Transfers</li>
             <li>Outstation Trips</li>
-            <li>Corporate Travel</li>
+            <li>Tour Travel</li>
           </ul>
         </div>
 
@@ -40,7 +58,7 @@ export default function Footer() {
         <div>
           <h3 className="text-[#F4C430] font-semibold mb-4">Contact</h3>
           <ul className="space-y-2 text-sm">
-            <li>Delhi, India</li>
+            <li>Mussoorie, India</li>
             <li>+91 81713 25155</li>
             <li>support@ghoomocabs.com</li>
           </ul>

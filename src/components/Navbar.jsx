@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50">
 
       {/* Background Blur Layer */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-lg border-b border-white/50 shadow-sm"></div>
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-lg shadow-sm"></div>
 
       {/* Navbar Content */}
       <div className="relative px-6 py-4 flex justify-between items-center">
@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl text-black"
+          className="md:hidden text-3xl text-red-500"
           onClick={() => setOpen(!open)}
         >
           {open ? "✕" : "☰"}
@@ -49,8 +49,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-lg shadow-lg rounded-b-2xl border-t border-gray-200">
-          <ul className="flex flex-col gap-3 px-6 py-5 text-black font-medium text-lg">
+        <div className="md:hidden absolute top-full right-0  bg-white/50 backdrop-blur-lg shadow-lg rounded-b-2xl ">
+          <ul className="flex flex-col gap-3 px-6  py-5 text-black font-medium text-lg">
 
             {[
               { name: "Home", path: "/" },
@@ -63,7 +63,7 @@ export default function Navbar() {
                 <Link
                   href={item.path}
                   onClick={() => setOpen(false)}
-                  className="block py-2 px-3 rounded-lg hover:bg-yellow-100 transition"
+                  className="block py-2 px-3 rounded-lg border-1 border-gray-50 hover:bg-yellow-100 transition"
                 >
                   {item.name}
                 </Link>
