@@ -1,41 +1,108 @@
 "use client";
 
-export const dynamic = "force-dynamic";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
-import Image from "next/image";
-import BookingForm from "@/components/BookingForm";
+export default function BookingForm({ adminNumber }) {
+  const searchParams = useSearchParams();
+  const destFromQuery = searchParams.get("destination") || "";
 
-const ADMIN_WHATSAPP_NUMBER = "+918171325155";
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    pickup: "",
+    destination: destFromQuery, // pre-fill
+    date: "",
+    message: "",
+  });
 
-export default function BookingPage() {
+  // Update destination if query changes
+  useEffect(() => {
+    if (destFromQuery) {
+      setForm((prev) => ({ ...prev, destination: destFromQuery }));
+    }
+  }, [destFromQuery]);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const sendToWhatsApp = (e) => {
+    e.preventDefault();
+
+    const text = `Cab Booking Inquiry
+Name: ${form.name}
+Phone: ${form.phone}
+Pickup Location: ${form.pickup}
+Destination: ${form.destination}
+Date: ${form.date}
+Message: ${form.message}`;
+
+    const url = `https://wa.me/${adminNumber}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white to-gray-50 px-2 py-4 md:py-10">
-      <div className="text-center mb-6 md:mb-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-          Cab <span className="text-yellow-500">Booking</span>
-        </h1>
-        <p className="text-gray-600 text-xs sm:text-sm mt-1">
-          Reserve your ride quickly and easily
-        </p>
-      </div>
+    <form onSubmit={sendToWhatsApp} className="space-y-4">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        value={form.name}
+        onChange={handleChange}
+        className="w-full border p-2 rounded"
+      />
 
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="grid md:grid-cols-2">
-          <div className="relative h-48 sm:h-64 md:h-auto">
-            <Image
-              src="/uploads/sedan.jpg"
-              alt="Cab Booking"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        required
+        value={form.phone}
+        onChange={handleChange}
+        className="w-full border p-2 rounded"
+      />
 
-          <div className="p-2 sm:p-4 md:p-6">
-            <BookingForm adminNumber={ADMIN_WHATSAPP_NUMBER} />
-          </div>
-        </div>
-      </div>
-    </section>
+      <input
+        type="text"
+        name="pickup"
+        placeholder="Pickup Location"
+        required
+        value={form.pickup}
+        onChange={handleChange}
+        className="w-full border p-2 rounded"
+      />
+
+      <input
+        type="text"
+        name="destination"
+        placeholder="Destination"
+        required
+        value={form.destination}
+        onChange={handleChange}
+        className="w-full border p-2 rounded"
+      />
+
+      <input
+        type="date"
+        name="date"
+        required
+        value={form.date}
+        onChange={handleChange}
+        className="w-full border p-2 rounded"
+      />
+
+      <textarea
+        name="message"
+        placeholder="Additional Message"
+        value={form.message}
+        onChange={handleChange}
+        className="w-full border p-2 rounded"
+      />
+
+      <button className="w-full bg-yellow-500 text-black py-2 rounded font-semibold hover:bg-black hover:text-yellow-400 transition">
+        Send Booking on WhatsApp
+      </button>
+    </form>
   );
 }
