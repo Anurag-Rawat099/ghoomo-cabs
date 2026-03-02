@@ -43,14 +43,14 @@ export default function Navbar() {
           className="md:hidden text-3xl text-red-500"
           onClick={() => setOpen(!open)}
         >
-          {open ? "✕" : "☰"}
+          {open ? "✕" : " ☰"}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden absolute top-full right-0  bg-white/50 backdrop-blur-lg shadow-lg rounded-b-2xl ">
-          <ul className="flex flex-col gap-3 px-6  py-5 text-black font-medium text-lg">
+          <ul className="flex flex-col gap-3 px-6  py-5 text-black font-medium text-sm">
 
             {[
               { name: "Home", path: "/" },
@@ -63,7 +63,7 @@ export default function Navbar() {
                 <Link
                   href={item.path}
                   onClick={() => setOpen(false)}
-                  className="block py-2 px-3 rounded-lg border-1 border-gray-50 hover:bg-yellow-100 transition"
+                  className="block py-1 px-2 rounded-lg border-1 border-amber-400 text-center bg-yellow-50 hover:bg-yellow-100 transition"
                 >
                   {item.name}
                 </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
             <li>
               <Link href="/booking" onClick={() => setOpen(false)}>
-                <button className="w-full bg-yellow-500 text-black py-2 rounded-lg font-semibold hover:bg-black hover:text-yellow-400 transition">
+                <button className="w-full bg-yellow-400 text-black py-2 rounded-lg font-semibold hover:bg-black hover:text-yellow-400 transition">
                   Book Cab
                 </button>
               </Link>

@@ -127,7 +127,7 @@ Message: ${form.message}`;
 
                 <textarea
                   name="message"
-                  rows="4"
+                  rows="3"
                   placeholder="Your Message"
                   value={form.message}
                   onChange={handleChange}
