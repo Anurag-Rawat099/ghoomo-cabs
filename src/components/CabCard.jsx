@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function CabCard({ title, price, image }) {
   return (
-    <div className="w-full h-full">
-      <div className="relative bg-white rounded-2xl  overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 h-full flex flex-col">
+    <div className="w-full  h-full">
+      <div className="relative bg-white rounded-2xl max-w-[280px] h-full overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 h-full flex flex-col">
 
         {/* Image */}
-        <div className="relative">
+        <div className="relative w-full h-48 sm:h-54 md:h-62">
           <img
             src={image}
             alt={title}
