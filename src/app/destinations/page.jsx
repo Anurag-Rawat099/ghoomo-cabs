@@ -1,12 +1,17 @@
 import DestinationSection from '@/components/DestinationSection'
+import CharDhamSection from '@/components/CharDhamSection'
 import React from 'react'
 
 export default function page() {
   return (
-  <>
- <section className="">
+  <div>
+ 
         <DestinationSection variant="grid" />
-      </section>
-  </>
+    
+       
+        <CharDhamSection variant="grid" />
+    
+
+  </div>
   )
 }

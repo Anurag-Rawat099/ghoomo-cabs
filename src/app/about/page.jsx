@@ -80,6 +80,11 @@ const serviceAreas = [
   "Kanatal",
   "Rishikesh",
   "Tehri Lake",
+  "Jolly Grant",
+  "Char Dham",
+  "JW Marriot",
+
+
 ];
 
 /* ---------------- PAGE ---------------- */
