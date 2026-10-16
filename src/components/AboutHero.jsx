@@ -15,7 +15,7 @@ export default function AboutHero({ stats }) {
       </motion.h1>
 
       <p className="max-w-3xl mx-auto text-gray-600 mb-10">
-        Premium cab service helping tourists explore Mussoorie and nearby hill
+        Premium cab service helping tourists explore Uttarakhand and nearby hill
         destinations with safe, reliable, and comfortable rides.
       </p>
 

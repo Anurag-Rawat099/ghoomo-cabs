@@ -10,14 +10,14 @@ import "swiper/css/pagination";
 
 export default function CabList() {
   const cabs = [
-    { id: 1, title: "Sedan (City Ride)", price: "100/km", image: "/uploads/Sedan.jpg" },
-    { id: 2, title: "SUV (Hill Ride)", price: "150/km", image: "/uploads/suv.jpg" },
-    { id: 3, title: "Luxury (Premium)", price: "220/km", image: "/uploads/luxary.jpg" },
-    { id: 4, title: "TempoTraveller (Group)", price: "350/km", image: "/uploads/tempo.jpg" },
-    { id: 5, title: "Scooty", price: "1200/day", image: "/uploads/scooty.jpg" },
-    { id: 6, title: "Bike", price: "1500/day", image: "/uploads/bike.jpg" },
-  ];
+    { id: 1, title: "Sedan (City Ride)", price: "₹10/km", image: "/uploads/Sedan.jpg" },
+    { id: 2, title: "SUV (Hill Ride)", price: "₹15/km", image: "/uploads/suv.jpg" },
+    { id: 3, title: "Luxury (Premium)", price: "₹22/km", image: "/uploads/luxary.jpg" },
+    { id: 4, title: "TempoTraveller (Group)", price: "₹28/km", image: "/uploads/tempo.jpg" },
+    { id: 5, title: "Scooty", price: "₹1200/day", image: "/uploads/scooty.jpg" },
+    { id: 6, title: "Bike", price: "₹1500/day", image: "/uploads/bike.jpg" },
 
+  ]
   return (
     <section className="py-12 md:py-16 bg-gray-50">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">

@@ -122,7 +122,7 @@ export default function AboutPage() {
           </div>
 
           <Image
-            src="/uploads/hero1.jpg"
+            src="/uploads/hero3.jpeg"
             alt="Travel"
             width={700}
             height={450}
@@ -135,7 +135,7 @@ export default function AboutPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <Image
-            src="/uploads/sedan.jpg"
+            src="/uploads/hero.jpeg"
             alt="Journey"
             width={650}
             height={420}

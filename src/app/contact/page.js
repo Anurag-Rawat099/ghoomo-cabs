@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // 👉 Admin WhatsApp Number (without + or spaces for wa.me link)
-const ADMIN_WHATSAPP_NUMBER = "918171325155";
+const ADMIN_WHATSAPP_NUMBER = "+91 8279355258";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -58,9 +58,9 @@ Message: ${form.message}`;
           {/* GLASS CONTACT CARDS */}
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             {[
-              { icon: "📞", title: "Call Us", text: "+91 98765 43210" },
-              { icon: "💬", title: "WhatsApp", text: "+91 81713 25155" },
-              { icon: "✉️", title: "Email", text: "support@ghoomo-cabs.in" },
+              { icon: "📞", title: "Call Us", text: "+91 8279355258" },
+              { icon: "💬", title: "WhatsApp", text: "+91 8279355258" },
+              { icon: "✉️", title: "Email", text: "ghoomocabs@gmail.com" },
               { icon: "📍", title: "Office", text: "Mall Road, Mussoorie" },
             ].map((item) => (
               <div

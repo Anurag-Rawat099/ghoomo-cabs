@@ -29,6 +29,7 @@ export default function Navbar() {
           <li><Link href="/about" className="hover:text-yellow-500 transition">About</Link></li>
           <li><Link href="/booking-inquiry" className="hover:text-yellow-500 transition">Rooms</Link></li>
           <li><Link href="/contact" className="hover:text-yellow-500 transition">Contact</Link></li>
+          <li><Link href="/ratelist" className="hover:text-yellow-500 transition">Rate  list</Link></li>
         </ul>
 
         {/* Desktop Button */}
@@ -58,6 +59,7 @@ export default function Navbar() {
               { name: "About", path: "/about" },
               { name: "Rooms", path: "/booking-inquiry" },
               { name: "Contact", path: "/contact" },
+              { name: "Rate list", path: "/ratelist" },
             ].map((item) => (
               <li key={item.name}>
                 <Link

@@ -16,7 +16,6 @@ export default function CharDhamSection() {
       desc: "The sacred source of River Yamuna surrounded by beautiful Himalayan landscapes.",
       image: "/uploads/yamunotri.jpg",
       link: "/booking?service=Yamunotri",
-      price: "5,999 / trip",
     },
     {
       title: "Gangotri",
@@ -24,7 +23,6 @@ export default function CharDhamSection() {
       desc: "One of the holiest pilgrimage sites and the origin of the sacred River Ganga.",
       image: "/uploads/gangotri.jpg",
       link: "/booking?service=Gangotri",
-      price: "8,499 / trip",
     },
     {
       title: "Kedarnath",
@@ -32,7 +30,6 @@ export default function CharDhamSection() {
       desc: "A revered Jyotirlinga dedicated to Lord Shiva amidst the majestic Himalayas.",
       image: "/uploads/kedarnath.jpg",
       link: "/booking?service=Kedarnath",
-      price: "15,499 / trip",
     },
     {
       title: "Badrinath",
@@ -40,7 +37,6 @@ export default function CharDhamSection() {
       desc: "The sacred abode of Lord Vishnu and one of India's most important pilgrimage destinations.",
       image: "/uploads/badrinath.jpg",
       link: "/booking?service=Badrinath",
-      price: "18,999 / trip",
     },
     {
       title: "Char Dham Package",
@@ -48,7 +44,7 @@ export default function CharDhamSection() {
       desc: "Experience Yamunotri, Gangotri, Kedarnath, and Badrinath in one divine pilgrimage package.",
       image: "/uploads/chardham.jpg",
       link: "/booking?service=CharDham",
-      price: "30,999 / trip",
+     
     },
   ];
 

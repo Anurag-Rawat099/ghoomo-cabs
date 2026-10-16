@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#0B1D2A] to-black text-gray-300 pt-14 pb-8 px-6">
+    <footer className="bg-gradient-to-b from-[#0B1D2A] to-black text-gray-300 pt-6 pb-4 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
 
         {/* Brand */}
@@ -12,7 +12,7 @@ export default function Footer() {
           </h2>
           <p className="text-sm leading-relaxed">
             Premium cab services designed for comfort, reliability, and
-            seamless travel experiences across India.
+            seamless travel experiences across Uttarakhand.
           </p>
         </div>
 
@@ -59,8 +59,8 @@ export default function Footer() {
           <h3 className="text-[#F4C430] font-semibold mb-4">Contact</h3>
           <ul className="space-y-2 text-sm">
             <li>Mussoorie, India</li>
-            <li>+91 81713 25155</li>
-            <li>support@ghoomocabs.com</li>
+            <li>+91 8279355258</li>
+            <li>ghoomocabs@gmail.com</li>
           </ul>
         </div>
 

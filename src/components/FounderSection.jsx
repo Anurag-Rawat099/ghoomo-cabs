@@ -1,7 +1,7 @@
 export default function FounderSection() {
   const founder = [
     {
-      name: "Rawat",
+      name: "Mr. Shubham Nautiyal",
       role: "Founder – Ghoomo Cabs",
       image: "/uploads/founder.jpg",
       description:

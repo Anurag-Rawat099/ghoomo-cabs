@@ -13,10 +13,7 @@ export default function CabCard({ title, price, image }) {
             className="h-48 sm:h-54 md:h-62 w-full object-cover"
           />
 
-          {/* Price */}
-          <div className="absolute top-3 right-3 bg-black text-yellow-400 px-3 py-1 rounded-full text-md sm:text-md font-bold shadow">
-            ₹{price}
-          </div>
+         
         </div>
 
         {/* Content */}

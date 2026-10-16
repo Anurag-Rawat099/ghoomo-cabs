@@ -16,7 +16,7 @@ export default function BookingForm({ adminNumber }) {
     date: "",
     message: "",
     cabType: "",
-    cabPrice: "",
+   
   });
 
   // render date only on client
@@ -33,7 +33,7 @@ export default function BookingForm({ adminNumber }) {
     setForm((prev) => ({
       ...prev,
       cabType: cabType || prev.cabType,
-      cabPrice: cabPrice || prev.cabPrice,
+      
       destination: destination || prev.destination,
     }));
   }, [searchParams]);
@@ -67,7 +67,7 @@ Message: ${form.message}`;
       {form.cabType && (
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-sm">
           <p className="font-semibold text-gray-800">{form.cabType}</p>
-          <p className="text-gray-600">₹{form.cabPrice}</p>
+         
         </div>
       )}
 

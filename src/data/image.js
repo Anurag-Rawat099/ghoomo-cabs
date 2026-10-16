@@ -1,7 +1,7 @@
 export const heroSlider = [
-  "/uploads/hero1.jpg",
-  "/uploads/hero2.jpg",
-  "/uploads/hero3.jpg",
+  "/uploads/hero.jpeg",
+  "/uploads/hero3.jpeg",
+  "/uploads/hero2.jpeg",
 ];
 
 export const cabs = [
