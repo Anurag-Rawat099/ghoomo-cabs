@@ -39,10 +39,10 @@ export default function VipCabSection() {
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section className="px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-black">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="text-3xl font-bold text-black sm:text-4xl">
             VIP <span className="text-yellow-500">Cab Services</span>
           </h2>
 
@@ -52,7 +52,7 @@ export default function VipCabSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
           {services.map((item, index) => (
             <CabCard
               key={index}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // 👉 Admin WhatsApp Number (without + or spaces for wa.me link)
-const ADMIN_WHATSAPP_NUMBER = "+91 8279355258";
+const ADMIN_WHATSAPP_NUMBER = "918279355258";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -37,12 +37,12 @@ Message: ${form.message}`;
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-36 pb-24 text-center text-white">
+      <section className="relative px-4 pb-16 pt-28 text-center text-white sm:px-6 sm:pb-24 sm:pt-36">
         <div className="absolute inset-0 bg-[url('/uploads/hero1.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl">
             Let’s Plan Your Next Journey
           </h1>
           <p className="text-gray-200 max-w-2xl mx-auto">
@@ -52,11 +52,11 @@ Message: ${form.message}`;
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
+      <section className="bg-gradient-to-b from-gray-50 to-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto">
 
           {/* GLASS CONTACT CARDS */}
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
+          <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mb-16 lg:grid-cols-4 lg:gap-6">
             {[
               { icon: "📞", title: "Call Us", text: "+91 8279355258" },
               { icon: "💬", title: "WhatsApp", text: "+91 8279355258" },
@@ -65,7 +65,7 @@ Message: ${form.message}`;
             ].map((item) => (
               <div
                 key={item.title}
-                className="backdrop-blur bg-white/70 border border-white/40 rounded-xl p-6 text-center shadow hover:-translate-y-1 transition"
+                className="rounded-xl border border-white/40 bg-white/70 p-4 text-center shadow backdrop-blur transition hover:-translate-y-1 sm:p-6"
               >
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <h3 className="font-semibold">{item.title}</h3>
@@ -75,10 +75,10 @@ Message: ${form.message}`;
           </div>
 
           {/* FORM + BENEFITS */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20">
+          <div className="mb-14 grid grid-cols-1 gap-8 md:mb-20 md:grid-cols-2 md:gap-12">
 
             {/* FORM */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="rounded-2xl bg-white p-5 shadow-lg sm:p-8">
               <h2 className="text-2xl font-bold mb-6">
                 Send Us a Message
               </h2>

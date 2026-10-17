@@ -27,13 +27,13 @@ export default function DestinationSection({ variant = "slider" }) {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <h2 className="text-4xl font-bold text-center mb-12">
+    <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
+      <h2 className="mb-8 px-4 text-center text-3xl font-bold sm:mb-10 sm:text-4xl lg:mb-12">
         Top <span className="text-yellow-500">Destinations</span>
       </h2>
 
       {variant === "slider" && (
-        <div className="max-w-7xl mx-auto px-6 relative">
+        <div className="relative mx-auto max-w-7xl px-3 sm:px-6">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={4}
@@ -57,7 +57,7 @@ export default function DestinationSection({ variant = "slider" }) {
       )}
 
       {variant === "grid" && (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-1 px-6 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
           {destinations.map((place, index) => (
             <DestinationCard key={index} {...place} />
           ))}

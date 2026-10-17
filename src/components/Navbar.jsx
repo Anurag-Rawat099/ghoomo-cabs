@@ -8,22 +8,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-
-      {/* Background Blur Layer */}
       <div className="absolute inset-0 bg-white/50 backdrop-blur-lg shadow-sm"></div>
-
-      {/* Navbar Content */}
-      <div className="relative px-6 py-4 flex justify-between items-center">
-
-        {/* Logo */}
+      <div className="relative flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         <Link href="/">
-          <h1 className="text-3xl font-extrabold text-yellow-500">
+          <span className="text-xl font-extrabold text-yellow-500 sm:text-3xl">
             Ghoomo Cabs
-          </h1>
+          </span>
         </Link>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex gap-8 font-medium text-black">
+        <ul className="hidden items-center gap-4 font-medium text-black lg:flex xl:gap-8">
           <li><Link href="/" className="hover:text-yellow-500 transition">Home</Link></li>
           <li><Link href="/destinations" className="hover:text-yellow-500 transition">Destinations</Link></li>
           <li><Link href="/about" className="hover:text-yellow-500 transition">About</Link></li>
@@ -32,27 +25,31 @@ export default function Navbar() {
           <li><Link href="/ratelist" className="hover:text-yellow-500 transition">Rate  list</Link></li>
         </ul>
 
-        {/* Desktop Button */}
-        <Link href="/booking" className="hidden md:block">
-          <button className="bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold hover:bg-black hover:text-yellow-400 transition">
-            Book Cab
-          </button>
+        <Link
+          href="/booking"
+          className="hidden rounded-full bg-yellow-500 px-4 py-2 font-semibold text-black transition hover:bg-black hover:text-yellow-400 lg:block"
+        >
+          Book Cab
         </Link>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl text-red-500"
-          onClick={() => setOpen(!open)}
+          type="button"
+          className="flex size-11 items-center justify-center rounded-lg text-2xl text-gray-900 hover:bg-yellow-50 lg:hidden"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen((isOpen) => !isOpen)}
         >
-          {open ? "✕" : " ☰"}
+          {open ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden absolute top-full right-0  bg-white/50 backdrop-blur-lg shadow-lg rounded-b-2xl ">
-          <ul className="flex flex-col gap-3 px-6  py-5 text-black font-medium text-sm">
-
+        <div
+          id="mobile-navigation"
+          className="absolute left-0 right-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto rounded-b-2xl border-t border-gray-200 bg-white/95 shadow-lg backdrop-blur-lg lg:hidden"
+        >
+          <ul className="flex flex-col gap-2 px-4 py-4 text-sm font-medium text-black sm:px-6">
             {[
               { name: "Home", path: "/" },
               { name: "Destinations", path: "/destinations" },
@@ -65,7 +62,7 @@ export default function Navbar() {
                 <Link
                   href={item.path}
                   onClick={() => setOpen(false)}
-                  className="block py-1 px-2 rounded-lg border-1 border-amber-400 text-center bg-yellow-50 hover:bg-yellow-100 transition"
+                  className="block min-h-11 rounded-lg border border-amber-400 bg-yellow-50 px-3 py-3 text-center transition hover:bg-yellow-100"
                 >
                   {item.name}
                 </Link>
@@ -73,13 +70,14 @@ export default function Navbar() {
             ))}
 
             <li>
-              <Link href="/booking" onClick={() => setOpen(false)}>
-                <button className="w-full bg-yellow-400 text-black py-2 rounded-lg font-semibold hover:bg-black hover:text-yellow-400 transition">
-                  Book Cab
-                </button>
+              <Link
+                href="/booking"
+                onClick={() => setOpen(false)}
+                className="block min-h-11 w-full rounded-lg bg-yellow-400 py-3 text-center font-semibold text-black transition hover:bg-black hover:text-yellow-400"
+              >
+                Book Cab
               </Link>
             </li>
-
           </ul>
         </div>
       )}

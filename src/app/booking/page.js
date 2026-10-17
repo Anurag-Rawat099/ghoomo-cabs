@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import BookingForm from "@/components/BookingForm";
 
-const ADMIN_WHATSAPP_NUMBER = "+91 8279355258";
+const ADMIN_WHATSAPP_NUMBER = "918279355258";
 
 export default function BookingPage() {
   return (

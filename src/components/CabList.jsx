@@ -20,7 +20,7 @@ export default function CabList() {
   ]
   return (
     <section className="py-12 md:py-16 bg-gray-50">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mx-auto text-center mb-10">
         Pick Your <span className="text-yellow-500">Perfect Ride</span>
       </h2>
 

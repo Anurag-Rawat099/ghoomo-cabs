@@ -1,16 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CabCard({ title, price, image }) {
   return (
     <div className="w-full  h-full">
-      <div className="relative bg-white rounded-2xl max-w-[280px] h-full overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 h-full flex flex-col">
+      <div className="relative mx-auto flex h-full w-full max-w-[350px] flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-2">
 
         {/* Image */}
-        <div className="relative w-full h-48 sm:h-54 md:h-62">
-          <img
+        <div className="relative h-48 w-full sm:h-56 lg:h-64">
+          <Image
             src={image}
             alt={title}
-            className="h-48 sm:h-54 md:h-62 w-full object-cover"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+            className="object-cover"
           />
 
          
@@ -30,7 +33,7 @@ export default function CabCard({ title, price, image }) {
               query: { cabType: title, cabPrice: price },
             }}
           >
-            <button className="mt-auto bg-yellow-500 text-white px-4 py-2 rounded-full text-sm sm:text-base font-semibold hover:bg-black hover:text-yellow-400 transition w-1/2">
+            <button className="mt-auto w-full rounded-full bg-yellow-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-black hover:text-yellow-400 sm:w-auto sm:text-base">
               Book Ride
             </button>
           </Link>

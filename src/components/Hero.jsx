@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[45vh] md:h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[28rem] items-center justify-center overflow-hidden sm:min-h-[34rem] md:h-screen md:min-h-0">
 
       {heroSlider.map((img, index) => (
         <Image
@@ -37,12 +37,12 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 text-center max-w-2xl px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+      <div className="relative z-10 mx-auto max-w-2xl px-5 text-center sm:px-6">
+        <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-6xl">
           Explore <span className="text-yellow-500">Mussoorie</span> with Comfort
         </h1>
 
-        <p className="text-white text-lg md:text-xl mb-6">
+        <p className="mb-6 text-base text-white sm:text-lg md:text-xl">
           Reliable cab services for tourists in Mussoorie, Dehradun, and nearby hill destinations.
         </p>
 

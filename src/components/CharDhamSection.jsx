@@ -50,6 +50,10 @@ export default function CharDhamSection() {
 
   return (
     <section className="py-16">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mx-auto text-center mb-10">
+    Chardham <span className="text-yellow-500">Yatra</span>
+      </h2>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Swiper
           modules={[ Autoplay]}
@@ -72,7 +76,7 @@ export default function CharDhamSection() {
         >
           {dhams.map((dham, index) => (
             <SwiperSlide key={index} className="!overflow-visible">
-              <div className="py-4">
+              <div className="py-4 mx-auto">
                 <CabCard
                   {...dham}
                   buttonText="Book Yatra"

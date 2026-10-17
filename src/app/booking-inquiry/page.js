@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const ADMIN_WHATSAPP_NUMBER = "+91 8279355258";
+const ADMIN_WHATSAPP_NUMBER = "918279355258";
 
 export default function BookingInquiry() {
   const [form, setForm] = useState({

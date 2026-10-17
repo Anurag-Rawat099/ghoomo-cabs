@@ -16,7 +16,7 @@ export default function BookingForm({ adminNumber }) {
     date: "",
     message: "",
     cabType: "",
-   
+    cabPrice: "",
   });
 
   // render date only on client
@@ -33,7 +33,7 @@ export default function BookingForm({ adminNumber }) {
     setForm((prev) => ({
       ...prev,
       cabType: cabType || prev.cabType,
-      
+      cabPrice: cabPrice || prev.cabPrice,
       destination: destination || prev.destination,
     }));
   }, [searchParams]);
@@ -44,19 +44,27 @@ export default function BookingForm({ adminNumber }) {
   const sendToWhatsApp = (e) => {
     e.preventDefault();
 
-    const text = `Cab Booking Inquiry
-Cab: ${form.cabType}
-Price: ₹${form.cabPrice}
+    const textLines = [
+      "Cab Booking Inquiry",
+      `Cab: ${form.cabType || "-"}`,
+      form.cabPrice ? `Price: ₹${form.cabPrice}` : null,
+      "",
+      `Name: ${form.name || "-"}`,
+      `Phone: ${form.phone || "-"}`,
+      `Pickup Location: ${form.pickup || "-"}`,
+      `Destination: ${form.destination || "-"}`,
+      `Date: ${form.date || "-"}`,
+      "",
+      `Message: ${form.message || "-"}`,
+    ].filter(Boolean).join("\n");
 
-Name: ${form.name}
-Phone: ${form.phone}
-Pickup Location: ${form.pickup}
-Destination: ${form.destination}
-Date: ${form.date}
+    const cleanNumber = (adminNumber || "").replace(/\D/g, "");
+    if (!cleanNumber) {
+      alert("Admin WhatsApp number is not configured.");
+      return;
+    }
 
-Message: ${form.message}`;
-
-    const url = `https://wa.me/${adminNumber}?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(textLines)}`;
     window.open(url, "_blank");
   };
 
